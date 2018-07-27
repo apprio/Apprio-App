@@ -1,0 +1,8 @@
+{
+  "name": "Apprio-App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "012f68a0"
+}
