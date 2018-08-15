@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, AlertController } from 'ionic-angular';
 
 import { TemplatePage } from '../template/template';
 
@@ -12,18 +12,12 @@ export class HomePage {
   username:string;
   password:string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              public toastCtrl: ToastController,
+              public alertCtrl: AlertController) {
 
   }
 
-  /* login(){
-
-    console.log("Username: " + this.username);
-
-    console.log("Password: " + this.password);
-
-//    this.navCtrl.push(TemplatePage);
-} **/
 
 loginCustom(username, password){
 
@@ -40,7 +34,7 @@ loginCustom(username, password){
       'inAppBrowserOptions': {'hidden': true}
   };
 
-  this.auth.login('custom', loginData, loginOptions).then(() => {
+  this.auth.loginCustom('custom', loginData, loginOptions).then(() => {
 
       this.loading.dismiss();
 
