@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 import { TemplatePage } from '../template/template';
 
@@ -53,6 +53,13 @@ loginCustom(username, password){
 
       //error
       console.log(err);
+      this.presentToast(err);
+      let alert = this.alertCtrl.create({
+        title: 'Login Failed',
+        subTitle: 'Review Login Credentials',
+        buttons: ['OK']
+      });
+      alert.present();
 
   });
 
