@@ -1,66 +1,64 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController, AlertController } from 'ionic-angular';
-
-import { TemplatePage } from '../template/template';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { TemplatePage } from '../../pages/template/template';
+import { ApiProvider } from '../../provider/api';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
   username:string;
   password:string;
 
-  constructor(public navCtrl: NavController,
-              public toastCtrl: ToastController,
-              public alertCtrl: AlertController) {
-
+  constructor
+  (public nav:NavController,
+   public alertCtrl:AlertController,
+   public loadingCtrl:LoadingController,
+   public api:ApiProvider
+  ) {
   }
 
+  goToTemplatePage() {
+    this.nav.push(TemplatePage);
+  }
 
-loginCustom(username, password){
+  login(username, password) {
 
-//  this.showLoader();
+    if (username == '' || password == '')
+    {
+      this.alertLoginError();
+      return;
+    }
 
-  let loginData = {
-      'root': username,
-      'Welcome1!!': password
-  };
+    let loading = this.loadingCtrl.create({
+      content: 'Loading ...'
+    });
 
-  // hide the in app browser. If you need to collection additional data outside of the app
-  // using the InAppBrowser, you should get rid of this.
-  let loginOptions = {
-      'inAppBrowserOptions': {'hidden': true}
-  };
+    loading.present();
 
-  this.auth.loginCustom('custom', loginData, loginOptions).then(() => {
+    // Server authentication.
+    this.api.login(username, password).subscribe(token => {
+      loading.dismiss();
 
-      this.loading.dismiss();
+      // If the user credentials are valid, the current user is redirected to the template page.
+      if (token && token != 'undefined' && token != 'No user found') {
+        localStorage.setItem('id_token', token.token);
+        localStorage.setItem('username', username);
+        this.goToTemplatePage();
 
-      //success
-      console.log(this.user);
+      } else {
+        this.alertLoginError();
+      }
+    });
+  }
 
-  }, (err) => {
-
-      this.loading.dismiss();
-
-      //error
-      console.log(err);
-      this.presentToast(err);
-      let alert = this.alertCtrl.create({
-        title: 'Login Failed',
-        subTitle: 'Review Login Credentials',
-        buttons: ['OK']
-      });
-      alert.present();
-
-  });
-
-}
-
-testLoginCustom(){
-  this.loginCustom('root', 'Welcome1!!');
-}
-
+  alertLoginError() {
+    let alert = this.alertCtrl.create({
+      title: 'LogIn Failed!',
+      subTitle: 'Check your login/password.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 }

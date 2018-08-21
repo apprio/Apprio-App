@@ -26,4 +26,9 @@ export class ApiProvider {
     return this.http.post(apiUrl+'browser'+id, httpOptions);
   }
 
+  login(username, password): Observable<any> {
+    let body = { username: username, password: password };
+    return this.http.post(apiUrl+'user/login', body, httpOptions);
+  }
+
 }
