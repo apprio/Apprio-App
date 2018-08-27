@@ -4,10 +4,10 @@ import { TemplatePage } from '../../pages/template/template';
 import { ApiProvider } from '../../provider/api';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-login',
+  templateUrl: 'login.html'
 })
-export class HomePage {
+export class LoginPage {
   username:string;
   password:string;
 
@@ -19,12 +19,7 @@ export class HomePage {
   ) {
   }
 
-  goToTemplatePage() {
-    this.nav.push(TemplatePage);
-  }
-
   login(username, password) {
-
     if (username == '' || password == '')
     {
       this.alertLoginError();
@@ -51,6 +46,10 @@ export class HomePage {
         this.alertLoginError();
       }
     });
+  }
+
+  goToTemplatePage() {
+    this.nav.push(TemplatePage);
   }
 
   alertLoginError() {

@@ -6,14 +6,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import { TemplatePage } from '../pages/template/template';
 import { ApiProvider } from '../provider/api';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    LoginPage,
     TemplatePage
   ],
   imports: [
@@ -24,7 +24,7 @@ import { ApiProvider } from '../provider/api';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    LoginPage,
     TemplatePage
   ],
   providers: [
