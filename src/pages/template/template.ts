@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TemplatePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CameraPage } from '../../pages/camera/camera';
+import { PfieldPage} from '../../pages/pfield/pfield';
+import { PaymentPage } from '../../pages/payment/payment';
+import { ScreeningPage } from '../../pages/screening/screening';
+import { NotePage } from '../../pages/note/note';
 
 @IonicPage()
 @Component({
@@ -20,6 +18,26 @@ export class TemplatePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TemplatePage');
+  }
+
+  PfieldPage() {
+    this.navCtrl.push(PfieldPage);
+  }
+
+  CameraPage() {
+    this.navCtrl.push(CameraPage);
+  }
+
+  PaymentPage() {
+    this.navCtrl.push(PaymentPage);
+  }
+
+  ScreeningPage() {
+    this.navCtrl.push(ScreeningPage);
+  }
+
+  NotePage() {
+    this.navCtrl.push(NotePage);
   }
 
 }

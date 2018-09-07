@@ -8,13 +8,25 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { TemplatePage } from '../pages/template/template';
+import { CameraPage } from '../pages/camera/camera';
+import { HomePage } from '../pages/home/home';
+import { PfieldPage } from '../pages/pfield/pfield';
+import { PaymentPage } from '../pages/payment/payment';
+import { ScreeningPage } from '../pages/screening/screening';
+import { NotePage } from '../pages/note/note';
 import { ApiProvider } from '../provider/api';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    TemplatePage
+    TemplatePage,
+    CameraPage,
+    HomePage,
+    PfieldPage,
+    PaymentPage,
+    ScreeningPage,
+    NotePage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +37,13 @@ import { ApiProvider } from '../provider/api';
   entryComponents: [
     MyApp,
     LoginPage,
-    TemplatePage
+    TemplatePage,
+    CameraPage,
+    HomePage,
+    PfieldPage,
+    PaymentPage,
+    ScreeningPage,
+    NotePage
   ],
   providers: [
     StatusBar,
