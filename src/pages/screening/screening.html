@@ -28,7 +28,10 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>FAQ Type</ion-label>
-    <ion-input></ion-input>
+    <ion-select [(ngModel)]="faqType">
+      <ion-option value="adult">Adult</ion-option>
+      <ion-option value="child">Child</ion-option>
+    </ion-select>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Patient Act No.</ion-label>
@@ -40,7 +43,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="hInsFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Name</ion-label>
@@ -64,7 +67,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="aInsFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Name</ion-label>
@@ -92,7 +95,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Dependent Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="depFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>No. of Dependents</ion-label>
@@ -108,7 +111,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Pregnancy Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="pregFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Due Date</ion-label>
@@ -116,7 +119,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Employed Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="empFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Date Last Worked</ion-label>
@@ -132,7 +135,7 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Unable To Work Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="unWorkFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Impairment Desc</ion-label>
@@ -140,15 +143,18 @@
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>SSI Disability Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="ssiDisFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Spouse SSI Disability Flag</ion-label>
-    <ion-input></ion-input>
+    <ion-checkbox color="orange" item-right [(ngModel)]="spouseSsiDisFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Spouse Employed?</ion-label>
-    <ion-input></ion-input>
+    <ion-select [(ngModel)]="sEmployed">
+      <ion-option value="y">Yes</ion-option>
+      <ion-option value="n">No</ion-option>
+    </ion-select>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Employment Income Self</ion-label>
