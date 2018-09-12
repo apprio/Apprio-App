@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TemplatePage } from '../../pages/template/template';
 
 /**
  * Generated class for the ScreeningPage page.
@@ -20,6 +21,10 @@ export class ScreeningPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScreeningPage');
+  }
+
+  TemplatePage() {
+    this.navCtrl.push(TemplatePage);
   }
 
 }

@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-toolbar>
     <ion-title>
-    <ion-icon name="card" style="zoom:1.5">  Payment</ion-icon>
+    <ion-icon ios="ios-card" md="md-card" style="zoom:1.5">  Payment</ion-icon>
   </ion-title>
   </ion-toolbar>
 
@@ -39,6 +39,10 @@
       <ion-label color="primary" fixed>Payment Date</ion-label>
       <ion-input type="date"></ion-input>
   </ion-item>
-
 </ion-list>
+
+
+<button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
+<button ion-button round outline>Save</button>
+
 </ion-content>

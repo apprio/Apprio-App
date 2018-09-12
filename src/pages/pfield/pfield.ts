@@ -4,6 +4,7 @@ import { CameraPage } from '../../pages/camera/camera';
 import { PaymentPage } from '../../pages/payment/payment';
 import { ScreeningPage } from '../../pages/screening/screening';
 import { NotePage } from '../../pages/note/note';
+import { TemplatePage } from '../../pages/template/template';
 
 /**
  * Generated class for the PfieldPage page.
@@ -40,6 +41,10 @@ export class PfieldPage {
 
   NotePage() {
     this.navCtrl.push(NotePage);
+  }
+
+  TemplatePage() {
+    this.navCtrl.push(TemplatePage);
   }
 
 }
