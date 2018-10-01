@@ -17,32 +17,32 @@
 
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Invoiced</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="payment.invoiced"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Payment Code</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="payment.code"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Payment Description</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="payment.description"></ion-input>
   </ion-item>
   <ion-item text-wrap>
       <ion-label color="primary" fixed>Payment Amount</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="payment.amount"></ion-input>
   </ion-item>
   <ion-item text-wrap>
       <ion-label color="primary" fixed>Payor</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="payment.payor"></ion-input>
   </ion-item>
   <ion-item text-wrap>
       <ion-label color="primary" fixed>Payment Date</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="payment.paymentDate"></ion-input>
   </ion-item>
 </ion-list>
 
 
 <button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
-<button ion-button round outline>Save</button>
+<button ion-button round outline (click)="savePayment()">Save</button>
 
 </ion-content>

@@ -16,213 +16,213 @@
   <ion-list>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>ID</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.id"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Rec ID</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.recID"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Patient ID</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.patientID"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>FAQ Type</ion-label>
-    <ion-select [(ngModel)]="faqType">
+    <ion-select [(ngModel)]="screening.faqType">
       <ion-option value="adult">Adult</ion-option>
       <ion-option value="child">Child</ion-option>
     </ion-select>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Patient Act No.</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="screening.patientActNo"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>County</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.county"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="hInsFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.hInsFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Name</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.hInsName"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Policy Number</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="screening.hInsPolicyNumber"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Insured Name</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.hInsInsuredName"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Co Phone</ion-label>
-    <ion-input type="tel"></ion-input>
+    <ion-input type="tel" [(ngModel)]="screening.hInsCoPhone"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>H Ins Effective Date</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="screening.hInsEffectiveDate"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="aInsFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.aInsFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Name</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.aInsName"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Policy Number</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="screening.aInsPolicyNumber"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Insured Name</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.aInsInsuredName"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Co Phone</ion-label>
-    <ion-input type="tel"></ion-input>
+    <ion-input type="tel" [(ngModel)]="screening.aInsCoPhone"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>A Ins Effective Date</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="screening.aInsEffectiveDate"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Marital Status</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.maritalStatus"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Dependent Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="depFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.depFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>No. of Dependents</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.noOfDependents"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Total # in HH</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="screening.totalinHH"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Dependents Ages</ion-label>
-    <ion-input type="number"></ion-input>
+    <ion-input type="number" [(ngModel)]="screening.dependentsAges"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Pregnancy Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="pregFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.pregnancyFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Due Date</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="screening.dueDate"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Employed Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="empFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.employedFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Date Last Worked</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="screening.dateLastWorked"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Released To Work</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.releasedToWork"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Return To Work Date</ion-label>
-    <ion-input type="date"></ion-input>
+    <ion-input type="date" [(ngModel)]="screening.returnToWorkDate"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Unable To Work Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="unWorkFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.unableToWorkFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Impairment Desc</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.impairmentDesc"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>SSI Disability Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="ssiDisFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.ssiDisFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Spouse SSI Disability Flag</ion-label>
-    <ion-checkbox color="orange" item-right [(ngModel)]="spouseSsiDisFlag"></ion-checkbox>
+    <ion-checkbox color="orange" item-right [(ngModel)]="screening.spouseSsiDisFlag"></ion-checkbox>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Spouse Employed?</ion-label>
-    <ion-select [(ngModel)]="sEmployed">
+    <ion-select [(ngModel)]="screening.sEmployed">
       <ion-option value="y">Yes</ion-option>
       <ion-option value="n">No</ion-option>
     </ion-select>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Employment Income Self</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.employmentIncomeSelf"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Employment Income Spouse</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.employmentIncomeSpouse"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>SSI Income Self</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.ssiIncomeSelf"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>SSI Income Spouse</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.ssiIncomeSpouse"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Child Support Self</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.childSupportSelf"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Child Support Spouse</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.childSupportSpouse"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Other Income Self</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.otherIncomeSelf"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Other Income Spouse</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.otherIncomeSpouse"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Checking Balance</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.checkingBalance"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Savings Balance</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.savingsBalance"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Other Assets</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.otherAssets"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Own Vehicle</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.ownVehicle"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>No Vehicles Owned</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.noVehiclesOwned"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Vehicle1 Type</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.vehicle1Type"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Vehicle1 Value</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.vehicle1Value"></ion-input>
   </ion-item>
   <ion-item text-wrap>
     <ion-label color="primary" fixed>Vehicle1 Owed</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="text" [(ngModel)]="screening.vehicle1Owed"></ion-input>
   </ion-item>
 </ion-list>
 
 <button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
-<button ion-button round outline>Save</button>
+<button ion-button round outline (click)="saveScreening()">Save</button>
 
 </ion-content>

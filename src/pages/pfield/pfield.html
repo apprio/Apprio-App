@@ -21,8 +21,7 @@
    </ion-toolbar>
 
     <ion-item text-wrap>
-      <ion-label color="primary" fixed>Patient Account Number</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.AccountNumber" required="" placeholder="Patient Account Number"></ion-input>
     </ion-item>
 
     <ion-toolbar>
@@ -31,66 +30,66 @@
 
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Campus</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.campus"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Account Type</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.accountType"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>SSN</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.ssn"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient Type</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientType"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Medical Record Number</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.medicalRecordNumber"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Admission Date</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="pfield.admissionDate"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Discharge Date</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="pfield.dischargeDate"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Admitting Diagnosis</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.admittingDiagnosis"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Account Balance</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.accountBalance"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient LastName</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientLastName"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient FirstName</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientFirstName"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient MI</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientMI"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>BirthDate</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="pfield.birthDate"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient Gender</ion-label>
-      <ion-select [(ngModel)]="gender">
+      <ion-select [(ngModel)]="pfield.gender">
         <ion-option value="f">Female</ion-option>
         <ion-option value="m">Male</ion-option>
       </ion-select>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient Phone Number</ion-label>
-      <ion-input type="tel"></ion-input>
+      <ion-input type="tel" [(ngModel)]="pfield.patientPhoneNumber"></ion-input>
     </ion-item>
 
     <ion-toolbar>
@@ -98,27 +97,27 @@
     </ion-toolbar>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient Address</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientAddress"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Street Address2</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.streetAddress2"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>APT Number</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.aptNumber"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>City</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.city"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>State</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.state"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Zip</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.zip"></ion-input>
     </ion-item>
 
     <ion-toolbar>
@@ -126,55 +125,55 @@
     </ion-toolbar>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Patient Relationship to Guarantor</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.patientRelationshipToGuarantor"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor FirstName</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorFirstName"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor LastName</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorLastName"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor Address</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorAddress"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor Address2</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorAddress2"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor APT No.</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorAPT"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor City</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorCity"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor State</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.guarantorState"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor Zip</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.guarantorZip"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor SSN</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.guarantorSSN"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor WPhone</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.guarantorWPhone"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor WPhone Ext</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.guarantorWPhoneExt"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Guarantor HPhone</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.guarantorHPhone"></ion-input>
     </ion-item>
 
 
@@ -183,15 +182,15 @@
     </ion-toolbar>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Assigned</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.assigned"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>Status</ion-label>
-      <ion-input></ion-input>
+      <ion-input type="text" [(ngModel)]="pfield.status"></ion-input>
     </ion-item>
     <ion-item text-wrap>
       <ion-label color="primary" fixed>FollowUp Date</ion-label>
-      <ion-input type="date"></ion-input>
+      <ion-input type="date" [(ngModel)]="pfield.followUpDate"></ion-input>
     </ion-item>
 
     <ion-fab top right >
@@ -205,4 +204,4 @@
 </ion-fab>
 
 <button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
-<button ion-button round outline>Save</button>
+<button ion-button round outline (click)="savePfield()">Save</button>
