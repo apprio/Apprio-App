@@ -21,7 +21,7 @@
    </ion-toolbar>
 
     <ion-item text-wrap>
-      <ion-input type="number" [(ngModel)]="pfield.AccountNumber" required="" placeholder="Patient Account Number"></ion-input>
+      <ion-input type="number" [(ngModel)]="pfield.accountNumber" required="" placeholder="Patient Account Number"></ion-input>
     </ion-item>
 
     <ion-toolbar>
@@ -203,5 +203,7 @@
   </ion-fab-list>
 </ion-fab>
 
+</ion-list>
 <button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
 <button ion-button round outline (click)="savePfield()">Save</button>
+</ion-content>

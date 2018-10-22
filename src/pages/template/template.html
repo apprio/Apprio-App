@@ -8,17 +8,42 @@
 
 
 <ion-content padding>
-    <h1> Templates </h1> <br>
+<!--    <h1> Patients </h1> <br>  !-->
 
-    <h5>
-    <ion-icon ios="ios-contacts" md="md-contacts" style="zoom:1.5" (click)="PfieldPage()"> Patient</ion-icon>
-  </h5><br><br>
+  <ion-header>
+    <ion-navbar>
+      <ion-title> Patients </ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="savePfield()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
 
+  <ion-list>
+    <ion-item *ngFor="let pfs of pfields" (click)="showDetails(pfield)">
+      <div> </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!--
+    <ion-fab top right >
+  <button ion-fab color="orange"><ion-icon style="zoom:1.5" ios="ios-add" md="md-add"></ion-icon></button>
+  <ion-fab-list side="bottom">
+    <button ion-fab><ion-icon ios="ios-contacts" md="md-contacts" (click)="PfieldPage()"></ion-icon><button>
+    <button ion-fab><ion-icon ios="ios-camera" md="md-camera" (click)="CameraPage()"></ion-icon></button>
+    <button ion-fab><ion-icon ios="ios-card" md="md-card" (click)="PaymentPage()" ></ion-icon></button>
+    <button ion-fab><ion-icon ios="ios-list" md="md-list" (click)="ScreeningPage()"></ion-icon></button>
+    <button ion-fab><ion-icon ios="ios-book" md="md-book" (click)="NotePage()"></ion-icon></button>
+  </ion-fab-list>
+</ion-fab>
+!-->
 
 <!--
     <ion-icon name="card" style="zoom:1.5" (click)="PaymentPage()" > Payment</ion-icon> <br><br>
     <ion-icon name="list" style="zoom:1.5" (click)="ScreeningPage()"> Screening</ion-icon> <br><br>
     <ion-icon name="book" style="zoom:1.5" (click)="NotePage()"> Note</ion-icon> <br><br>
 !-->
-
-</ion-content>

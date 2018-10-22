@@ -24,35 +24,16 @@ export class PaymentPage {
               private databaseprovider: DatabaseProvider,
               private platform: Platform,
               public modalCtrl: ModalController) {
+                /*
                 this.databaseprovider.getDatabaseState().subscribe(rdy => {
                   if (rdy) {
                     this.loadPaymentData();
                   }
                 })
+                */
               }
 
-  loadPaymentData() {
-    this.databaseprovider.getPayments().then(data => {
-      this.payments = data;
-    })
-  }
 
-  savePayment() {
-    this.databaseprovider.savePayment(
-      this.payment['invoiced'],
-      this.payment['code'],
-      this.payment['description'],
-      this.payment['amount'],
-      this.payment['payor'],
-      this.payment['paymentDate']
-      )
-      .then(data => {
-          this.loadPaymentData();
-        });
-        this.payment = {};
-      }
-
-/*
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentPage');
   }
@@ -61,6 +42,7 @@ export class PaymentPage {
     this.navCtrl.push(TemplatePage);
   }
 
+/*
 ionViewDidLoad() {
   this.getPayments();
 }
@@ -68,5 +50,5 @@ ionViewDidLoad() {
 ionViewEnter() {
   this.getPayments();
 }
-**/
+*/
 }
