@@ -7,13 +7,6 @@ import { ScreeningPage } from '../../pages/screening/screening';
 import { NotePage } from '../../pages/note/note';
 import { TemplatePage } from '../../pages/template/template';
 
-/**
- * Generated class for the PfieldPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-pfield',
@@ -24,7 +17,7 @@ export class PfieldPage {
 //  pfield = {};
   pfield: any = {};
   canSave : true;
-
+  buttonColor:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -50,6 +43,8 @@ export class PfieldPage {
 
 // pouchdb example
   savePfield() {
+    this.buttonColor = 'orange';
+
     if (this.canSave){
       this.databaseProvider.save(this.pfield)
           .catch(()=>{});

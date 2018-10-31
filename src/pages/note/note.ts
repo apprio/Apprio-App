@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { TemplatePage } from '../../pages/template/template';
 import { DatabaseProvider } from '../../provider/database/database';
 
-/**
- * Generated class for the NotePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-note',
@@ -18,6 +11,7 @@ import { DatabaseProvider } from '../../provider/database/database';
 export class NotePage {
   notes = [];
   note = {};
+  buttonColor:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -31,6 +25,10 @@ export class NotePage {
                 })
                 */
               }
+
+  saveNote(){
+    this.buttonColor = 'orange';
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotePage');

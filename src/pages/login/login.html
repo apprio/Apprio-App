@@ -1,24 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      <img height="35" src="assets/imgs/logo.png">
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content text-center class="vertical-align-content">
+  <ion-grid>
+    <ion-row center>
+      <ion-col text-center>
+        <img alt="Logo" height="200" src="assets/imgs/tribbles-logo-medium.png" >
 
-<ion-content padding>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+          </ion-item>
 
-  <ion-list>
+          <ion-item>
+            <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+        </ion-list>
 
-    <ion-item>
-      <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
-    </ion-item>
+        <button ion-button color="blue" (click)="login(username, password)" [ngStyle]="{'background-color': buttonColor}">Log In</button>
+          <br><br>
+          <a class="item" href="#" onclick="window.open('http://52.54.81.207/c/tribbles/recover/forgot-password', '_system', 'location=yes'); return false;">
+            Forgot Username or Password?
+          </a>
 
-    <ion-item>
-      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-  <button ion-button color="danger" outline round (click)="login(username, password)">Log In</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

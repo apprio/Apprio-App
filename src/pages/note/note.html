@@ -15,56 +15,59 @@
 
   <ion-list>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Comment Title</ion-label>
+    <ion-label color="blue" fixed>Comment Title</ion-label>
     <ion-input type="text" [(ngModel)]="note.title"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Comment Text</ion-label>
+    <ion-label color="blue" fixed>Comment Text</ion-label>
     <ion-input type="text" [(ngModel)]="note.text"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Cancel Client Export</ion-label>
+    <ion-label color="blue" fixed>Cancel Client Export</ion-label>
     <ion-input type="text" [(ngModel)]="note.cancelClientExport"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Client Exported</ion-label>
+    <ion-label color="blue" fixed>Client Exported</ion-label>
     <ion-input type="text" [(ngModel)]="note.clientExported"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Client Export File</ion-label>
+    <ion-label color="blue" fixed>Client Export File</ion-label>
     <ion-input type="text" [(ngModel)]="note.clientExportFile"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Client Export Date</ion-label>
+    <ion-label color="blue" fixed>Client Export Date</ion-label>
     <ion-input type="date" [(ngModel)]="note.clientExportDate"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Corp Export File</ion-label>
+    <ion-label color="blue" fixed>Corp Export File</ion-label>
     <ion-input type="text" [(ngModel)]="note.corpExportFile"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Note Type</ion-label>
+    <ion-label color="blue" fixed>Note Type</ion-label>
     <ion-input type="text" [(ngModel)]="note.type"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Production Count</ion-label>
+    <ion-label color="blue" fixed>Production Count</ion-label>
     <ion-input type="text" [(ngModel)]="note.productionCount"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>Sys Gen</ion-label>
+    <ion-label color="blue" fixed>Sys Gen</ion-label>
     <ion-input type="text" [(ngModel)]="note.sysGen"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>System Exported</ion-label>
+    <ion-label color="blue" fixed>System Exported</ion-label>
     <ion-input type="text" [(ngModel)]="note.sysExported"></ion-input>
   </ion-item>
   <ion-item text-wrap>
-    <ion-label color="primary" fixed>System Exported Date</ion-label>
+    <ion-label color="blue" fixed>System Exported Date</ion-label>
     <ion-input type="date" [(ngModel)]="note.sysExportedDate"></ion-input>
   </ion-item>
 </ion-list>
 
-<button ion-button round outline color="dark" (click)="TemplatePage()">Cancel</button>
-<button ion-button round outline (click)="saveNote()">Save</button>
+<ion-row center>
+  <ion-col text-center>
+    <button ion-button color="blue" (click)="saveNote()" [ngStyle]="{'background-color': buttonColor}">Save</button>
+  </ion-col>
+</ion-row>
 
 </ion-content>

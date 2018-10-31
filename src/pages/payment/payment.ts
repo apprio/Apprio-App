@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams, Platform, ModalController } from '
 import { TemplatePage } from '../../pages/template/template';
 import { DatabaseProvider } from '../../provider/database/database';
 
-/**
- * Generated class for the PaymentPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation. App components NavController, NavParams, ModalController, Platform, DatabaseProvider.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-payment',
@@ -18,6 +11,7 @@ import { DatabaseProvider } from '../../provider/database/database';
 export class PaymentPage {
   payments = [];
   payment = {};
+  buttonColor:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -33,6 +27,9 @@ export class PaymentPage {
                 */
               }
 
+  savePayment(){
+    this.buttonColor = 'orange';
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentPage');

@@ -10,6 +10,7 @@ import { ApiProvider } from '../../provider/api';
 export class LoginPage {
   username:string;
   password:string;
+  buttonColor:any;
 
   constructor
   (public nav:NavController,
@@ -20,6 +21,8 @@ export class LoginPage {
   }
 
   login(username, password) {
+    this.buttonColor = 'orange';
+
     if (username == '' || password == '')
     {
       this.alertLoginError();
