@@ -3,13 +3,17 @@
     <ion-title>
       <img height="50" src="assets/imgs/tribbles-logo.png">
     </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="savePfield()">
+        <ion-icon ios="ios-person-add" md="md-person-add" color="orange"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-<!--    <h1> Patients </h1> <br>  !-->
 
+<!--
   <ion-header>
     <ion-navbar>
       <ion-title> Patients </ion-title>
@@ -20,6 +24,36 @@
       </ion-buttons>
     </ion-navbar>
   </ion-header>
+-->
+
+  <ion-list>
+    <ion-list-header>
+      My Encounters
+    </ion-list-header>
+      <ion-item (click)="ReferralPage()">Referral</ion-item>
+      <ion-item (click)="ProcessingPage()">Processing</ion-item>
+      <ion-item (click)="ApplicationPage()">Application Submitted</ion-item>
+      <ion-item (click)="EvidencePage()">Evidence Required</ion-item>
+      <ion-item (click)="EligibilityPage()">Eligibility Determination</ion-item>
+      <ion-item (click)="BillingPage()">Billing Review</ion-item>
+      <ion-item (click)="ClosedPage()">Closed</ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Census
+    </ion-list-header>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab mini color="orange"><ion-icon style="zoom:1" ios="ios-menu" md="md-menu"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab><ion-icon color="blue" ios="ios-people" md="md-people" (click)="PfieldPage()"></ion-icon></button>
+        <button ion-fab><ion-icon color="blue" ios="ios-camera" md="md-camera" (click)="CameraPage()"></ion-icon></button>
+        <button ion-fab><ion-icon color="blue" ios="ios-list" md="md-list" (click)="ScreeningPage()"></ion-icon></button>
+        <button ion-fab><ion-icon color="blue" ios="ios-book" md="md-book" (click)="NotePage()"></ion-icon></button>
+      </ion-fab-list>
+  </ion-fab>
 
   <ion-list>
     <ion-item *ngFor="let pfs of pfields" (click)="showDetails(pfield)">
@@ -28,22 +62,3 @@
   </ion-list>
 
 </ion-content>
-
-<!--
-    <ion-fab top right >
-  <button ion-fab color="orange"><ion-icon style="zoom:1.5" ios="ios-add" md="md-add"></ion-icon></button>
-  <ion-fab-list side="bottom">
-    <button ion-fab><ion-icon ios="ios-contacts" md="md-contacts" (click)="PfieldPage()"></ion-icon><button>
-    <button ion-fab><ion-icon ios="ios-camera" md="md-camera" (click)="CameraPage()"></ion-icon></button>
-    <button ion-fab><ion-icon ios="ios-card" md="md-card" (click)="PaymentPage()" ></ion-icon></button>
-    <button ion-fab><ion-icon ios="ios-list" md="md-list" (click)="ScreeningPage()"></ion-icon></button>
-    <button ion-fab><ion-icon ios="ios-book" md="md-book" (click)="NotePage()"></ion-icon></button>
-  </ion-fab-list>
-</ion-fab>
-!-->
-
-<!--
-    <ion-icon name="card" style="zoom:1.5" (click)="PaymentPage()" > Payment</ion-icon> <br><br>
-    <ion-icon name="list" style="zoom:1.5" (click)="ScreeningPage()"> Screening</ion-icon> <br><br>
-    <ion-icon name="book" style="zoom:1.5" (click)="NotePage()"> Note</ion-icon> <br><br>
-!-->

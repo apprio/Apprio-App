@@ -12,11 +12,17 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { TemplatePage } from '../pages/template/template';
 import { CameraPage } from '../pages/camera/camera';
-import { HomePage } from '../pages/home/home';
 import { PfieldPage } from '../pages/pfield/pfield';
 import { PaymentPage } from '../pages/payment/payment';
 import { ScreeningPage } from '../pages/screening/screening';
 import { NotePage } from '../pages/note/note';
+import { ApplicationPage } from '../pages/application/application';
+import { BillingPage } from '../pages/billing/billing';
+import { ClosedPage } from '../pages/closed/closed';
+import { EligibilityPage } from '../pages/eligibility/eligibility';
+import { EvidencePage } from '../pages/evidence/evidence';
+import { ProcessingPage } from '../pages/processing/processing';
+import { ReferralPage } from '../pages/referral/referral';
 import { ApiProvider } from '../provider/api';
 import { DatabaseProvider } from '../provider/database/database';
 
@@ -26,11 +32,17 @@ import { DatabaseProvider } from '../provider/database/database';
     LoginPage,
     TemplatePage,
     CameraPage,
-    HomePage,
     PfieldPage,
     PaymentPage,
     ScreeningPage,
-    NotePage
+    NotePage,
+    ApplicationPage,
+    BillingPage,
+    ClosedPage,
+    EligibilityPage,
+    EvidencePage,
+    ProcessingPage,
+    ReferralPage
   ],
   imports: [
     BrowserModule,
@@ -44,11 +56,17 @@ import { DatabaseProvider } from '../provider/database/database';
     LoginPage,
     TemplatePage,
     CameraPage,
-    HomePage,
     PfieldPage,
     PaymentPage,
     ScreeningPage,
-    NotePage
+    NotePage,
+    ApplicationPage,
+    BillingPage,
+    ClosedPage,
+    EligibilityPage,
+    EvidencePage,
+    ProcessingPage,
+    ReferralPage
   ],
   providers: [
     StatusBar,
