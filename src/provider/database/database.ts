@@ -75,9 +75,9 @@ export class DatabaseProvider {
 
       this.pdb.changes({live: true, since: 'now', include_docs: true})
         .on('change', ()=>{
-          allDocs().then((pfs)=>{
+          /*allDocs().then((pfs)=>{
             this.pfields = pfs;
-          });
+          });*/
         });
 
       return allDocs();

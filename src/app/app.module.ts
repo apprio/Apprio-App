@@ -24,6 +24,7 @@ import { EvidencePage } from '../pages/evidence/evidence';
 import { ProcessingPage } from '../pages/processing/processing';
 import { ReferralPage } from '../pages/referral/referral';
 import { ApiProvider } from '../provider/api';
+import { Posts } from '../provider/posts';
 import { DatabaseProvider } from '../provider/database/database';
 
 @NgModule({
@@ -75,7 +76,8 @@ import { DatabaseProvider } from '../provider/database/database';
     ApiProvider,
     SQLite,
     SQLitePorter,
-    DatabaseProvider
+    DatabaseProvider,
+    Posts
   ]
 })
 export class AppModule {}

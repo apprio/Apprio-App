@@ -32,11 +32,12 @@ export class TemplatePage {
 // pouchdb example
   ioViewDidEnter() {
       this.databaseProvider.createPouchDB();
-      this.databaseProvider.read()
+      //TODO: FIX
+      /*this.databaseProvider.read()
         .then(pfields => {
           this.pfields = pfields;
         })
-        .catch((err)=>{});
+        .catch((err)=>{});*/
   }
   // pouchdb example
   showDetails(pfield) {
