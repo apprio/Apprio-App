@@ -7,7 +7,7 @@ import 'rxjs/add/observable/from';
 export class Posts {
  
     db: any;
-    remote: string = 'http://127.0.0.1:5984/couchblog';
+    remote: string = 'http://52.54.81.207/couchdb/couchblog/';
  
     constructor() {
  
