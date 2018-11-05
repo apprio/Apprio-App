@@ -5,9 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
-import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { SQLite } from '@ionic-native/sqlite';
-
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { TemplatePage } from '../pages/template/template';
@@ -74,8 +71,6 @@ import { DatabaseProvider } from '../provider/database/database';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    SQLite,
-    SQLitePorter,
     DatabaseProvider,
     Posts
   ]

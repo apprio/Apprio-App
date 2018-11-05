@@ -31,7 +31,7 @@ export class TemplatePage {
 
 // pouchdb example
   ioViewDidEnter() {
-      this.databaseProvider.createPouchDB();
+      //this.databaseProvider.createPouchDB(); //don't think we need this anymore
       //TODO: FIX
       /*this.databaseProvider.read()
         .then(pfields => {
