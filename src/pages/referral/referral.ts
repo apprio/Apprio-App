@@ -36,7 +36,7 @@ createPatient(){
       message: 'What do you need to do?',
       inputs: [
         {
-          name: 'title'
+          name: 'patient_name'
         }
       ],
       buttons: [
@@ -46,7 +46,7 @@ createPatient(){
         {
           text: 'Save',
           handler: data => {
-            this.databaseProvider.create({title: data.title});
+            this.databaseProvider.create({patient_name: data.patient_name});
           }
         }
       ]
@@ -63,7 +63,7 @@ createPatient(){
       message: 'Change your mind?',
       inputs: [
         {
-          name: 'title'
+          name: 'patient_name'
         }
       ],
       buttons: [
@@ -76,7 +76,7 @@ createPatient(){
             this.databaseProvider.update({
               _id: patient._id,
               _rev: patient._rev,
-              title: data.title
+              patient_name: data.patient_name
             });
           }
         }
