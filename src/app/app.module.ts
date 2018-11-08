@@ -5,9 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
 import { IonicStorageModule } from '@ionic/storage';
-import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { SQLite } from '@ionic-native/sqlite';
-
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { TemplatePage } from '../pages/template/template';
@@ -24,6 +21,7 @@ import { EvidencePage } from '../pages/evidence/evidence';
 import { ProcessingPage } from '../pages/processing/processing';
 import { ReferralPage } from '../pages/referral/referral';
 import { ApiProvider } from '../provider/api';
+import { Posts } from '../provider/posts';
 import { DatabaseProvider } from '../provider/database/database';
 
 @NgModule({
@@ -73,9 +71,8 @@ import { DatabaseProvider } from '../provider/database/database';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-    SQLite,
-    SQLitePorter,
-    DatabaseProvider
+    DatabaseProvider,
+    Posts
   ]
 })
 export class AppModule {}

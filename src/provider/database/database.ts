@@ -1,85 +1,110 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-//import { Platform } from 'ionic-angular';
-//import { BehaviorSubject } from 'rxjs/Rx';
-//import { Storage } from '@ionic/storage';
-import * as PouchDB from 'pouchdb';
-import cordovaSqlitePlugin from 'pouchdb-adapter-cordova-sqlite';
+import PouchDB from 'pouchdb';
 
 
 
 @Injectable()
 export class DatabaseProvider {
-//  database: SQLiteObject;
-//  private databaseReady: BehaviorSubject<boolean>;
-  public pdb;
-  public pfields;
+	
+  public db: any;  //the pouchdb
+  public patients; //used to be pfields - just changing it to patients for now
+  remote: string = 'http://52.54.81.207/couchdb/tribbles/'; //'http://localhost:5984/tribbles';
 
-/* SQLite
-  constructor(public sqlitePorter: SQLitePorter,
-              private storage: Storage,
-              private sqlite: SQLite,
-              private platform: Platform,
-              private http: Http) {
-    this.databaseReady = new BehaviorSubject(false);
-    this.platform.ready().then(() => {
-      this.sqlite.create({
-        name: 'tribbles.db',
-        location: 'default'
-      })
-        .then((db: SQLiteObject) => {
-          this.database = db;
-          this.storage.get('database_filled').then(val => {
-            if (val) {
-              this.databaseReady.next(true);
-            } else {
-              this.fillDatabase();
-            }
-          });
-        });
-    });
-  }
-*/
-
-  createPouchDB() {
-    PouchDB.plugin(cordovaSqlitePlugin);
-    this.pdb = new PouchDB('pfields.db',
-    { adapter: 'cordova-sqlite' });
+  constructor() {
+  	this.db = new PouchDB('tribbles');
+  	
+    let options = {
+      live: true,
+      retry: true,
+      continuous: true
+    };
+    
+    this.db.sync(this.remote, options);
   }
 
-  create(pfield) {
-    return this.pdb.post(pfield);   //post() creates new objects in PouchDB database
-  } // error points this function out when trying to save - Cannot read property 'post' of undefined
-
-  save(pfield) {
-    return this.pdb.put(pfield);
+  create(patient) {
+    this.db.post(patient);
   }
 
-  delete(pfield) {
-    return this.pdb.delete(pfield);
+  update(patient) {
+    this.db.put(patient).catch((err) => {
+    console.log(err);
+  	});
   }
 
-  read() {
-    function allDocs(){
-      this.pdb.allDocs({include_docs: true})
-      .then(docs => {
-        this.pfields = docs.rows.map(row => {
-          row.doc.Date = new Date(row.doc.Date);
-          return row.doc;
-        });
+  delete(patient) {
+      this.db.remove(patient).catch((err) => {
+	    console.log(err);
+	  });
+  }
 
-        return this.pfields;
-      });
+  read() { // start read
+
+	 if (this.patients) {
+	    return Promise.resolve(this.patients);
+	  }
+	 
+	  return new Promise(resolve => {
+	    this.db.allDocs({
+	      include_docs: true
+	    }).then((result) => {
+	      this.patients = [];
+	      let docs = result.rows.map((row) => {
+	        this.patients.push(row.doc);
+	      });
+	 
+	      resolve(this.patients);
+	 
+	      this.db.changes({live: true, since: 'now', include_docs: true}).on('change', (change) => {
+	        this.handleChange(change);
+	      });
+	 
+	    }).catch((error) => {
+	 
+	      console.log(error);
+	 
+	    });
+	 
+	  });
+  } // end read
+  
+  
+  
+handleChange(change){ //this is set up in the read operation - see https://www.joshmorony.com/offline-syncing-in-ionic-2-with-pouchdb-couchdb/
+ 
+  let changedDoc = null;
+  let changedIndex = null;
+ 
+  this.patients.forEach((doc, index) => {
+ 
+    if(doc._id === change.id){
+      changedDoc = doc;
+      changedIndex = index;
     }
-
-      this.pdb.changes({live: true, since: 'now', include_docs: true})
-        .on('change', ()=>{
-          allDocs().then((pfs)=>{
-            this.pfields = pfs;
-          });
-        });
-
-      return allDocs();
+ 
+  });
+ 
+  //A document was deleted
+  if(change.deleted){
+    this.patients.splice(changedIndex, 1);
   }
+  else {
+ 
+    //A document was updated
+    if(changedDoc){
+      this.patients[changedIndex] = change.doc;
+    }
+ 
+    //A document was added
+    else {
+      this.patients.push(change.doc);
+    }
+ 
+  }
+ 
+} // end handle change
+  
+  
 }

@@ -46,11 +46,9 @@ export class PfieldPage {
     this.buttonColor = 'orange';
 
     if (this.canSave){
-      this.databaseProvider.save(this.pfield)
-          .catch(()=>{});
+      this.databaseProvider.update(this.pfield);
     } else {
-      this.databaseProvider.create(this.pfield)
-          .catch(()=>{});
+      this.databaseProvider.create(this.pfield);
     }
 
     this.viewCtrl.dismiss(this.pfield);
